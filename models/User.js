@@ -1,5 +1,5 @@
 const { Schema, model, Types } = require('mongoose');
-
+// import moment
 const userSchema = new Schema(
   {
     username: {
@@ -37,11 +37,11 @@ const userSchema = new Schema(
     id: false,
   }
 );
-
+// get total count of friends on retrieval
 userSchema.virtual("friendCount").get(function () {
   return this.friends.length;
 });
-
+// create the User model using the userSchema
 const User = model('User', userSchema);
 
 module.exports = User;
