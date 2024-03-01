@@ -10,23 +10,22 @@ const {
     deleteFriend
 } = require('../../controllers/userController');
 
-// Set up GET all and POST at /api/users
-router
-    .route('/')
-    .get(getUser)
-    .post(createUser);
+// /api/thoughts GET all and POST thought
+router.route('/').get(getThought).post(createThought);
 
-// Set up GET one, PUT, and DELETE at /api/users/:id
-router
-    .route('/:id')
-    .get(getSingleUser)
-    .put(updateUser)
-    .delete(deleteUser);
+// /api/thoughts/:thoughtId GET one thought, PUT and DELETE by iD
+router.route('/:thoughtId')
+.get(getSingleThought)
+.put(updateThought)
+.delete(deleteThought);
 
-// Set up POST and DELETE at /api/users/:userId/friends/:friendId
-router
-    .route('/:userId/friends/:friendId')
-    .post(addFriend)
-    .delete(deleteFriend);
+//  /api/thoughts/:thoughtId/reactions POST new reactions
+router.route('/:thoughtId/reactions')
+.post(createReaction);
+
+// /api/thoughts/:thoughtId/reactions/:reactionId DELETE reaction by ID
+router.route('/:thoughtId/reactions/:reactionId')
+.delete(deleteReaction);
+
 
 module.exports = router;
