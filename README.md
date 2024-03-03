@@ -3,10 +3,15 @@
 ## Table of Contents
 
 - [Title](#title)
+- [Description](#description)
 - [Link](#link)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contacts](#contacts)
+
+## Description
+
+Welocme to my Social Network API, this was made to show off my skills of "NoSQL" and to see what I could accomplish. It's a backend application in which you can add users, friends, thoughts, and reactions to a database... kinda like a facebook hence the name "Social Network" I had a lot of fun doing this and would love more projects like this in my future as a developer! 
 
 ## Link
 
