@@ -4,7 +4,7 @@ module.exports = {
     // get all users
     async getUser(req, res) {
         try {
-            const userData = await User.find()
+            const userData = await Users.find()
                 .select("-__v")
                 .populate("thoughts")
                 .populate("friends");
@@ -19,7 +19,7 @@ module.exports = {
     async getSingleUser(req, res) {
         try {
             const userData
-                = await User.findOne({ _id: req.params.userId })
+                = await Users.findOne({ _id: req.params.userId })
                     .select("-__v")
                     .populate("thoughts")
                     .populate("friends");
@@ -37,7 +37,7 @@ module.exports = {
     // create a new user
     async createUser(req, res) {
         try {
-            const userData = await User.create(req.body);
+            const userData = await Users.create(req.body);
             res.json(userData);
         } catch (err) {
             console.log(err);
@@ -49,7 +49,7 @@ module.exports = {
     async updateUser(req, res) {
         try {
             const userData
-                = await User.findOneAndUpdate({ _id: req.params.userId }, req.body, {
+                = await Users.findOneAndUpdate({ _id: req.params.userId }, req.body, {
                     new: true,
                     runValidators: true,
                 });
@@ -69,7 +69,7 @@ module.exports = {
         try {
             const userData
                 = await
-                User.findOneAndUpdate(
+                Users.findOneAndUpdate(
                     { _id: req.params.userId },
                     { $addToSet: { friends: req.params.friendId } },
                     { new: true }
@@ -91,7 +91,7 @@ module.exports = {
         try {
             const userData
                 = await
-                User.findOneAndUpdate(
+                Users.findOneAndUpdate(
                     { _id: req.params.userId },
                     { $pull: { friends: req.params.friendId } },
                     { new: true }
@@ -112,7 +112,7 @@ module.exports = {
     async deleteUser(req, res) {
         try {
             const userData
-                = await User.findOneAndDelete({ _id: req.params.userId });
+                = await Users.findOneAndDelete({ _id: req.params.userId });
             if (!userData) {
                 res.status(404).json({ message: "No user found with this id!" });
                 return;
