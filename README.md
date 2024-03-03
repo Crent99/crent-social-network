@@ -43,5 +43,5 @@ Make sure you have MongoDB, and Insomnia downloaded. Clone the repo and have at 
 
 ## Contacts
 
-- [Colin (Email)](mailto:Crent0699@mail.com)
+- [(Email)](mailto:Crent0699@mail.com)
 - [(GitHub)](https://github.com/Crent99)
