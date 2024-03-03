@@ -14,7 +14,6 @@ async getThought(req, res) {
         res.status(500).json(err);
     }
     },
-    
 // get single thought by id
 async getSingleThought(req, res) {
     try {
@@ -105,7 +104,6 @@ async createReaction(req, res) {
     }
     },
 // delete a reaction by id
-
 async deleteReaction(req, res) {
     try {
         const thoughtData = await Thoughts.findOneAndUpdate(
